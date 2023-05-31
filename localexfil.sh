@@ -61,7 +61,7 @@ echo "Internal IP: ${SUBNET}" >> $LOOT_BASIC_PATH
 LOOT_INT_GW:$(route | grep default | awk {'print $2'})
 echo "Gateway IP: ${LOOT_INT_GW}" >> $LOOT_BASIC_PATH
 LOOT_EXT_IP:$(curl $EXT_IP_PROV) || LED FAIL2 & sendlog "Failed to aquire external IP"
-echo "Gateway IP: ${LOOT_INT_GW}" >> $LOOT_BASIC_PATH
+echo "External IP: ${LOOT_EXT_IP}" >> $LOOT_BASIC_PATH
 sendlog "finished stage 1"
 
 sendlog "starting stage 2"
